@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="false">
+  <test name="Run On Chrome">
+    <classes>
+      <class name="com.liveguru.users.User_01_Login_To_System" />
+      <class name="com.liveguru.users.User_02_Register_To_System"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

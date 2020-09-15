@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="54" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+    <groups>
+    </groups>
+    <test name="Run On Chrome" duration-ms="54" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+      <class name="com.liveguru.users.User_02_Register_To_System">
+        <test-method status="PASS" signature="Login_01_Empty_Email_And_Password()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="Login_01_Empty_Email_And_Password" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_01_Empty_Email_And_Password -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="Login_02_Invalid_Email()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="Login_02_Invalid_Email" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_02_Invalid_Email -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="Login_03_Email_Not_Existing()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="Login_03_Email_Not_Existing" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_03_Email_Not_Existing -->
+        <test-method status="PASS" signature="Login_04_Password_Less_Than_6_Chars()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="Login_04_Password_Less_Than_6_Chars" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_04_Password_Less_Than_6_Chars -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Login_05_Incorrect_Password()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="Login_05_Incorrect_Password" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_05_Incorrect_Password -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Login_06_Successful()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="Login_06_Successful" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login_06_Successful -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_02_Register_To_System@56f4468b]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.liveguru.users.User_02_Register_To_System -->
+      <class name="com.liveguru.users.User_01_Login_To_System">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Register_01_Empty_Data()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="Register_01_Empty_Data" duration-ms="4" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register_01_Empty_Data -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="Register_02_Invalid_Email()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="Register_02_Invalid_Email" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register_02_Invalid_Email -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="Register_03_Password_Less_Than_6_Chars()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="Register_03_Password_Less_Than_6_Chars" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register_03_Password_Less_Than_6_Chars -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Register_04_Password_Different_Confirm()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="Register_04_Password_Different_Confirm" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register_04_Password_Different_Confirm -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Register_05_Valid_Data()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="Register_05_Valid_Data" duration-ms="1" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register_05_Valid_Data -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.liveguru.users.User_01_Login_To_System@5d5eef3d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-09-13T15:48:37Z" finished-at="2020-09-13T15:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.liveguru.users.User_01_Login_To_System -->
+    </test> <!-- Run On Chrome -->
+  </suite> <!-- Suite -->
+</testng-results>
