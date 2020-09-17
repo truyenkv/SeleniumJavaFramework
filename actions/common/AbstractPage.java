@@ -55,21 +55,25 @@ public abstract class AbstractPage {
 	}
 
 	public void acceptAlert(WebDriver driver) {
+		waitAlertPresence(driver);
 		alert = driver.switchTo().alert();
 		alert.accept();
 	}
 
 	public void cancelAlert(WebDriver driver) {
+		waitAlertPresence(driver);
 		alert = driver.switchTo().alert();
 		alert.dismiss();
 	}
 
 	public String getTextAlert(WebDriver driver) {
+		waitAlertPresence(driver);
 		alert = driver.switchTo().alert();
 		return alert.getText();
 	}
 
 	public void sendKeyToAlert(WebDriver driver, String keyword) {
+		waitAlertPresence(driver);
 		alert = driver.switchTo().alert();
 		alert.sendKeys(keyword);
 	}
@@ -259,6 +263,29 @@ public abstract class AbstractPage {
 	public void removeAttributeInDOM(WebDriver driver, String xpathElement, String attributeRemove) {
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');", find(driver, xpathElement));
+	}
+	
+	public boolean isImageLoaded(WebDriver driver, String xpathValue) {
+		jsExecutor = (JavascriptExecutor) driver;
+		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", find(driver, xpathValue));
+		if(status) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void waitForElementVisible(WebDriver driver, String xpathValue) {
+		explicitWait = new WebDriverWait(driver, longTimeOut);
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(xpathValue)));
+	}
+	
+	public void waitForElementInvisible(WebDriver driver, String xpathValue) {
+		explicitWait = new WebDriverWait(driver, longTimeOut);
+		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(xpathValue)));
+	}
+	public void waitForElementClickable(WebDriver driver, String xpathValue) {
+		explicitWait = new WebDriverWait(driver, longTimeOut);
+		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(xpathValue)));
 	}
 	
 }
