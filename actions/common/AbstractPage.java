@@ -2,6 +2,7 @@ package common;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -28,6 +29,10 @@ public abstract class AbstractPage {
 
 	public void openUrl(WebDriver driver, String url) {
 		driver.get(url);
+	}
+	
+	public void setImplicitWait(WebDriver driver) {
+		driver.manage().timeouts().implicitlyWait(longTimeOut, TimeUnit.SECONDS);
 	}
 
 	public String getTitle(WebDriver driver) {
