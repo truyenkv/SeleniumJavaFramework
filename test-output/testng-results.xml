@@ -1,29 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9379" started-at="2020-09-19T00:42:58Z" finished-at="2020-09-19T00:43:07Z">
+  <suite name="Suite" duration-ms="67237" started-at="2020-09-20T07:10:11Z" finished-at="2020-09-20T07:11:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9379" started-at="2020-09-19T00:42:58Z" finished-at="2020-09-19T00:43:07Z">
-      <class name="com.liveguru.users.Level_03_Page_Object">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.liveguru.users.Level_03_Page_Object@7fe8ea47]" name="beforeClass" is-config="true" duration-ms="4507" started-at="2020-09-19T00:42:58Z" finished-at="2020-09-19T00:43:02Z">
+    <test name="Run On Chrome" duration-ms="10834" started-at="2020-09-20T07:10:11Z" finished-at="2020-09-20T07:10:22Z">
+      <class name="com.liveguru.users.Level_04_Page_Object">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.liveguru.users.Level_04_Page_Object@6d00a15d]" name="beforeClass" is-config="true" duration-ms="6099" started-at="2020-09-20T07:10:11Z" finished-at="2020-09-20T07:10:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.Level_03_Page_Object@7fe8ea47]" name="beforeMethod" is-config="true" duration-ms="2529" started-at="2020-09-19T00:43:02Z" finished-at="2020-09-19T00:43:05Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.Level_04_Page_Object@6d00a15d]" name="beforeMethod" is-config="true" duration-ms="2987" started-at="2020-09-20T07:10:17Z" finished-at="2020-09-20T07:10:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Register_05_Valid_Data()[pri:0, instance:com.liveguru.users.Level_03_Page_Object@7fe8ea47]" name="Register_05_Valid_Data" duration-ms="2250" started-at="2020-09-19T00:43:05Z" finished-at="2020-09-19T00:43:07Z">
+        <test-method status="PASS" signature="Register_05_Valid_Data()[pri:0, instance:com.liveguru.users.Level_04_Page_Object@6d00a15d]" name="Register_05_Valid_Data" duration-ms="1646" started-at="2020-09-20T07:10:20Z" finished-at="2020-09-20T07:10:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Register_05_Valid_Data -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.liveguru.users.Level_03_Page_Object@7fe8ea47]" name="afterClass" is-config="true" duration-ms="79" started-at="2020-09-19T00:43:07Z" finished-at="2020-09-19T00:43:07Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.liveguru.users.Level_04_Page_Object@6d00a15d]" name="afterClass" is-config="true" duration-ms="88" started-at="2020-09-20T07:10:22Z" finished-at="2020-09-20T07:10:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.liveguru.users.Level_03_Page_Object -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.liveguru.users.Level_04_Page_Object -->
+    </test> <!-- Run On Chrome -->
+    <test name="Run On FireFox" duration-ms="56384" started-at="2020-09-20T07:10:22Z" finished-at="2020-09-20T07:11:18Z">
+      <class name="com.liveguru.users.Level_04_Page_Object">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.liveguru.users.Level_04_Page_Object@cb5822]" name="beforeClass" is-config="true" duration-ms="43372" started-at="2020-09-20T07:10:22Z" finished-at="2020-09-20T07:11:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.liveguru.users.Level_04_Page_Object@cb5822]" name="beforeMethod" is-config="true" duration-ms="8207" started-at="2020-09-20T07:11:05Z" finished-at="2020-09-20T07:11:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Register_05_Valid_Data()[pri:0, instance:com.liveguru.users.Level_04_Page_Object@cb5822]" name="Register_05_Valid_Data" duration-ms="4325" started-at="2020-09-20T07:11:13Z" finished-at="2020-09-20T07:11:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Register_05_Valid_Data -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.liveguru.users.Level_04_Page_Object@cb5822]" name="afterClass" is-config="true" duration-ms="478" started-at="2020-09-20T07:11:18Z" finished-at="2020-09-20T07:11:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.liveguru.users.Level_04_Page_Object -->
+    </test> <!-- Run On FireFox -->
+  </suite> <!-- Suite -->
 </testng-results>

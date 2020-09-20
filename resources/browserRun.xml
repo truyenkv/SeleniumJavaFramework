@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="false">
+
+
+  <test name="Run On Chrome">
+  <parameter name = "browser" value = "chrome"/>
+    <classes>
+      <class name="com.liveguru.users.Level_04_Page_Object"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Run On FireFox">
+  <parameter name = "browser" value = "firefox"/>
+    <classes>
+      <class name="com.liveguru.users.Level_04_Page_Object"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  
+</suite> <!-- Suite -->

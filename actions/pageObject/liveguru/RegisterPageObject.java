@@ -1,5 +1,7 @@
 package pageObject.liveguru;
 
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
 
 import common.AbstractPage;
@@ -58,7 +60,7 @@ public class RegisterPageObject extends AbstractPage {
 
 	public void inputTextToEmailField(String email) {
 		waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXT_FIELD);
-		sendKeyToField(driver, RegisterPageUI.EMAIL_TEXT_FIELD, email);
+		sendKeyToField(driver,RegisterPageUI.EMAIL_TEXT_FIELD, randomString() + email);
 	}
 
 	public void inputTextToPasswordField(String password) {
@@ -80,7 +82,21 @@ public class RegisterPageObject extends AbstractPage {
 		waitForElementVisible(driver, RegisterPageUI.MESSAGE_ERROR_PASSWORD_DIFF_CONFIRM_PASSWORD);
 		return getElementText(driver, RegisterPageUI.MESSAGE_ERROR_PASSWORD_DIFF_CONFIRM_PASSWORD);
 	}
-
+	
+	private int randomNumber() {
+		Random rand = new Random();
+		return rand.nextInt(10000);
+	}
+	
+	private String randomString() {
+		StringBuilder sb = new StringBuilder(4); 
+		String AlphaNumericString = "abcdefghijklmnopqrstuvxyz";
+		for(int i = 0; i < 4; i++) {
+			int index = (int)(AlphaNumericString.length() * Math.random()); 
+			sb.append(AlphaNumericString.charAt(index)); 
+		}
+		return sb.toString(); 
+	}
 	
 	
 
