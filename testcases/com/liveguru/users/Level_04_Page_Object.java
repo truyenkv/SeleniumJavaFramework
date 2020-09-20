@@ -23,13 +23,11 @@ public class Level_04_Page_Object extends AbstractTest{
 	RegisterPageObject registerPage;
 	DashboardPageObject dashBoardPage;
 	
-	@Parameters("browser")
+	@Parameters({"browser", "appUrl"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getWebDriver(browserName);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://live.demoguru99.com/");
-		driver.manage().window().maximize();
+	public void beforeClass(String browserName, String appUrl) {
+//		driver = getWebDriver(browserName);
+		driver = getWebDriver(browserName, appUrl);
 		homePage = new HomePageObject(driver);
 	}
 
