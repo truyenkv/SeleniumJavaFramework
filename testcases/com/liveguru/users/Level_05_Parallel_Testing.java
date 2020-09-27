@@ -16,7 +16,7 @@ import pageObject.liveguru.HomePageObject;
 import pageObject.liveguru.LoginPageObject;
 import pageObject.liveguru.RegisterPageObject;
 
-public class Level_04_Page_Object extends AbstractTest{
+public class Level_05_Parallel_Testing extends AbstractTest{
 	WebDriver driver;
 	HomePageObject homePage;
 	LoginPageObject loginPage;
