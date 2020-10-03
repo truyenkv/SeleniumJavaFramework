@@ -17,4 +17,19 @@ public class DashboardPageObject extends AbstractPage{
 		waitForElementVisible(driver, DashboardPageUI.MESSAGE_OF_RERISTER_SUCCESSFUL);
 		return getElementText(driver, DashboardPageUI.MESSAGE_OF_RERISTER_SUCCESSFUL);
 	}
+
+	public HomePageObject clickOnLogoutLink() {
+		waitForElementVisible(driver, DashboardPageUI.ACCOUNT_LINK);
+		clickToElement(driver, DashboardPageUI.ACCOUNT_LINK);
+		waitForElementClickable(driver, DashboardPageUI.LOGOUT_LINK);
+		clickToElement(driver, DashboardPageUI.LOGOUT_LINK);
+		//return new HomePageObject(driver);
+		return PageGeneratorManager.getHomePage(driver);
+	}
+
+	public boolean isTitleLoginSuccessDisplay() {
+		waitForElementVisible(driver, DashboardPageUI.HELLO_ACCOUNT_LOGIN_SUCCESS);
+		return isElementDisplay(driver, DashboardPageUI.HELLO_ACCOUNT_LOGIN_SUCCESS);
+	}
+	
 }

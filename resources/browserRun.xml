@@ -6,7 +6,7 @@
   <test name="Run On Chrome">
   <parameter name = "browser" value = "chrome"/>
     <classes>
-      <class name="com.liveguru.users.Level_09_Page_Generator_Manager"/>
+      <class name="com.liveguru.users.Level_10_Switch_Page"/>
       <!-- <class name="com.liveguru.users.Level_06_Factory_Pattern"/> -->
     </classes>
   </test> 

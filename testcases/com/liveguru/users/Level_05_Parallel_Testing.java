@@ -1,5 +1,4 @@
-   package com.liveguru.users;
-
+package com.liveguru.users;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -10,28 +9,24 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import common.AbstractTest;
-import driverFactory.DriverFactory;
-import driverFactory.DriverManager;
 import pageObject.liveguru.DashboardPageObject;
 import pageObject.liveguru.HomePageObject;
 import pageObject.liveguru.LoginPageObject;
 import pageObject.liveguru.RegisterPageObject;
 
-public class Level_06_Factory_Pattern extends AbstractTest{
+public class Level_05_Parallel_Testing extends AbstractTest{
 	WebDriver driver;
 	HomePageObject homePage;
 	LoginPageObject loginPage;
 	RegisterPageObject registerPage;
 	DashboardPageObject dashBoardPage;
 	
-	
-	DriverManager driverManager;
-	
 	@Parameters({"browser", "appUrl"})
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
-		driverManager = DriverFactory.getBrowserDriver(browserName);
-		driver = driverManager.getDriver(appUrl);
+//		driver = getWebDriver(browserName);
+		driver = getWebDriver(browserName, appUrl);
+		System.out.println("The driver is "+ driver.toString());
 		homePage = new HomePageObject(driver);
 	}
 
@@ -41,7 +36,6 @@ public class Level_06_Factory_Pattern extends AbstractTest{
 		loginPage = new LoginPageObject(driver);
 		loginPage.clickToCreateAnAccountButton();
 		registerPage = new RegisterPageObject(driver);
-
 	}
 	
 //	@Test
@@ -102,7 +96,8 @@ public class Level_06_Factory_Pattern extends AbstractTest{
 	
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		//driver.quit();
+		removeDriver();
 	}
 
 }

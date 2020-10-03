@@ -19,7 +19,6 @@ WebDriver driver;
 	private WebElement MESSAGE_OF_RERISTER_SUCCESSFUL;
 	
 	public String getMessageofSuccessfulRegister() {
-		//waitForElementVisible(driver, MESSAGE_OF_RERISTER_SUCCESSFUL);
 		return getElementText(driver, MESSAGE_OF_RERISTER_SUCCESSFUL);
 	}
 }

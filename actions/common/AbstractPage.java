@@ -15,6 +15,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObject.liveguru.AboutUsPageObject;
+import pageObject.liveguru.AdvanceSearchPageObject;
+import pageObject.liveguru.ContactUsPageObject;
+import pageObject.liveguru.PageGeneratorManager;
+import pageObject.liveguru.SearchItemsPageObject;
+import pageUIs.liveguru.AboutUsPageUI;
+import pageUIs.liveguru.AbstractPageUI;
+import pageUIs.liveguru.ContactUsPageUI;
+import pageUIs.liveguru.SearchItemsPageUI;
+
 public abstract class AbstractPage {
 
 	private Alert alert;
@@ -291,6 +301,31 @@ public abstract class AbstractPage {
 	public void waitForElementClickable(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(xpathValue)));
+	}
+	
+	public AboutUsPageObject openAboutUsPage(WebDriver driver) {
+		waitForElementClickable(driver, AbstractPageUI.ABOUTUS_LINK);
+		clickToElement(driver, AbstractPageUI.ABOUTUS_LINK);
+		return PageGeneratorManager.getAboutUs(driver);
+	}
+	
+	public AdvanceSearchPageObject openAdvanceSearchPage(WebDriver driver) {
+		waitForElementClickable(driver, AbstractPageUI.ADVANCESEARCH_LINK);
+		clickToElement(driver, AbstractPageUI.ADVANCESEARCH_LINK);
+		return PageGeneratorManager.getAdvanceSearch(driver);
+	}
+	
+	public SearchItemsPageObject openSearchItemsPage(WebDriver driver) {
+		waitForElementClickable(driver, AbstractPageUI.SEARCHITEMS_LINK);
+		clickToElement(driver,  AbstractPageUI.SEARCHITEMS_LINK);
+		return PageGeneratorManager.getSeachItems(driver);
+	}
+	
+	
+	public ContactUsPageObject openContactUsPage(WebDriver driver) {
+		waitForElementClickable(driver, AbstractPageUI.CONTACTUS_LINK);
+		clickToElement(driver, AbstractPageUI.CONTACTUS_LINK);
+		return PageGeneratorManager.getContactUs(driver);
 	}
 	
 }

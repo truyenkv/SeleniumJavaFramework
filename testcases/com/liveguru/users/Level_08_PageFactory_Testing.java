@@ -1,6 +1,5 @@
 package com.liveguru.users;
 
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -26,7 +25,6 @@ public class Level_08_PageFactory_Testing extends AbstractTest{
 	@Parameters({"browser", "appUrl"})
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
-//		driver = getWebDriver(browserName);
 		driver = getWebDriver(browserName, appUrl);
 		System.out.println("The driver is "+ driver.toString());
 		homePage = new HomePageObject(driver);
