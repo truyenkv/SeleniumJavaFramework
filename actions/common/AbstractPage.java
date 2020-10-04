@@ -147,6 +147,16 @@ public abstract class AbstractPage {
 	public void clickToElement(WebDriver driver, String xpathElement) {
 		find(driver, xpathElement).click();
 	}
+	
+	//return getDynamicLocator
+	public String getDynamicLocator(String xpathElement, String... value) {
+		return String.format(xpathElement, (Object[]) value);
+	}
+	
+	//click generator
+	public void clickToElement(WebDriver driver, String xpathElement, String... value) {
+		find(driver, getDynamicLocator(xpathElement, value)).click();
+	}
 
 	public void sendKeyToField(WebDriver driver, String xpathElement, String text) {
 		element = find(driver, xpathElement);
@@ -224,6 +234,11 @@ public abstract class AbstractPage {
 		return find(driver, xpathElement).isDisplayed();
 	}
 	
+	//check display with dynamiclocator
+	public boolean isElementDisplay(WebDriver driver, String xpathElement, String... value) {
+		return find(driver, getDynamicLocator(xpathElement, value)).isDisplayed();
+	}
+	
 	public boolean isElementSelect(WebDriver driver, String xpathElement) {
 		return find(driver, xpathElement).isSelected();
 	}
@@ -293,14 +308,26 @@ public abstract class AbstractPage {
 		explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(xpathValue)));
 	}
+	//wait with dynamic locator
+	public void waitForElementVisible(WebDriver driver, String xpathValue, String... value) {
+		explicitWait = new WebDriverWait(driver, longTimeOut);
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(getDynamicLocator(xpathValue, value))));
+	}
 	
 	public void waitForElementInvisible(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(xpathValue)));
 	}
+	
 	public void waitForElementClickable(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(xpathValue)));
+	}
+	
+	//wait with dynamic locator
+	public void waitForElementClickable(WebDriver driver, String xpathValue, String... value) {
+		explicitWait = new WebDriverWait(driver, longTimeOut);
+		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(getDynamicLocator(xpathValue, value))));
 	}
 	
 	public AboutUsPageObject openAboutUsPage(WebDriver driver) {
