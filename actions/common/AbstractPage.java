@@ -330,6 +330,32 @@ public abstract class AbstractPage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(getDynamicLocator(xpathValue, value))));
 	}
 	
+	public AbstractPage openFooterPageName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		switch(pageName){
+		case "About Us":
+			return PageGeneratorManager.getAboutUs(driver);
+		
+		case "Advanced Search":
+			return PageGeneratorManager.getAdvanceSearch(driver);
+		
+		case "Search Iterms":
+			return PageGeneratorManager.getSeachItems(driver);
+			
+		case "Contact Us":
+			return PageGeneratorManager.getContactUs(driver);
+			
+		default:
+			return null;
+		}
+	}
+	
+	public void openFooterByName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+	}
+	
 	public AboutUsPageObject openAboutUsPage(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.ABOUTUS_LINK);
 		clickToElement(driver, AbstractPageUI.ABOUTUS_LINK);
@@ -354,5 +380,6 @@ public abstract class AbstractPage {
 		clickToElement(driver, AbstractPageUI.CONTACTUS_LINK);
 		return PageGeneratorManager.getContactUs(driver);
 	}
+	
 	
 }
