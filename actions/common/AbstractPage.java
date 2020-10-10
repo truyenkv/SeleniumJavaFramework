@@ -163,6 +163,14 @@ public abstract class AbstractPage {
 		element.clear();
 		element.sendKeys(text);
 	}
+	
+	
+	//sendkey with dynamic locator
+	public void sendKeyToField(WebDriver driver, String text, String xpathElement, String... value) {
+		element = find(driver, getDynamicLocator(xpathElement, value));
+		element.clear();
+		element.sendKeys(text);
+	}
 
 	public void selectItemDropdownByText(WebDriver driver, String xpathElement, String valueSelect) {
 		select = new Select(find(driver, xpathElement));
@@ -216,6 +224,11 @@ public abstract class AbstractPage {
 
 	public int countElementNumber(WebDriver driver, String xpathElement) {
 		return finds(driver, xpathElement).size();
+	}
+	
+	//count with dynamic locator
+	public int countElementNumber(WebDriver driver, String xpathElement, String... value) {
+		return finds(driver, getDynamicLocator(xpathElement, value)).size();
 	}
 
 	public void checkTheCheckBox(WebDriver driver, String xpathElement) {

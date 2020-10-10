@@ -7,8 +7,8 @@ public class PageGeneratorManager {
 	public static HomePageObject getHomePage(WebDriver driver) {
 		return new HomePageObject(driver);
 	}
-	public static LoginPageObject getLoginPage(WebDriver driver) {
-		return new LoginPageObject(driver);
+	public static UserLoginPageObject getLoginPage(WebDriver driver) {
+		return new UserLoginPageObject(driver);
 	}
 	public static RegisterPageObject getRegisterPage(WebDriver driver) {
 		return new RegisterPageObject(driver);
@@ -31,5 +31,13 @@ public class PageGeneratorManager {
 	
 	public static SearchItemsPageObject getSeachItems(WebDriver driver) {
 		return new SearchItemsPageObject(driver);
+	}
+	
+	public static AdminLoginPageObject getAdminLoginPage(WebDriver driver) {
+		return new AdminLoginPageObject(driver);
+	}
+	
+	public static ManageCustomerPageObject getManageCustomerPage(WebDriver driver) {
+		return new ManageCustomerPageObject(driver);
 	}
 }

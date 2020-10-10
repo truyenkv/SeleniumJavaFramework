@@ -13,13 +13,13 @@ import org.testng.annotations.Test;
 import common.AbstractTest;
 import pageObject.liveguru.DashboardPageObject;
 import pageObject.liveguru.HomePageObject;
-import pageObject.liveguru.LoginPageObject;
+import pageObject.liveguru.UserLoginPageObject;
 import pageObject.liveguru.RegisterPageObject;
 
 public class Level_04_Page_Object extends AbstractTest{
 	WebDriver driver;
 	HomePageObject homePage;
-	LoginPageObject loginPage;
+	UserLoginPageObject loginPage;
 	RegisterPageObject registerPage;
 	DashboardPageObject dashBoardPage;
 	
@@ -35,7 +35,7 @@ public class Level_04_Page_Object extends AbstractTest{
 	@BeforeMethod
 	public void beforeMethod() {
 		homePage.clickToMyAccountLink();
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.clickToCreateAnAccountButton();
 		registerPage = new RegisterPageObject(driver);
 	}

@@ -14,7 +14,7 @@ import pageObject.liveguru.AdvanceSearchPageObject;
 import pageObject.liveguru.ContactUsPageObject;
 import pageObject.liveguru.DashboardPageObject;
 import pageObject.liveguru.HomePageObject;
-import pageObject.liveguru.LoginPageObject;
+import pageObject.liveguru.UserLoginPageObject;
 import pageObject.liveguru.PageGeneratorManager;
 import pageObject.liveguru.RegisterPageObject;
 import pageObject.liveguru.SearchItemsPageObject;
@@ -22,7 +22,7 @@ import pageObject.liveguru.SearchItemsPageObject;
 public class Level_11_Dynamic_Locator extends AbstractTest{
 	WebDriver driver;
 	HomePageObject homePage;
-	LoginPageObject loginPage;
+	UserLoginPageObject loginPage;
 	RegisterPageObject registerPage;
 	DashboardPageObject dashBoardPage;
 	AboutUsPageObject aboutUsPage;
