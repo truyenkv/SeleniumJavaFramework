@@ -20,10 +20,7 @@ import pageObject.liveguru.AdvanceSearchPageObject;
 import pageObject.liveguru.ContactUsPageObject;
 import pageObject.liveguru.PageGeneratorManager;
 import pageObject.liveguru.SearchItemsPageObject;
-import pageUIs.liveguru.AboutUsPageUI;
 import pageUIs.liveguru.AbstractPageUI;
-import pageUIs.liveguru.ContactUsPageUI;
-import pageUIs.liveguru.SearchItemsPageUI;
 
 public abstract class AbstractPage {
 
@@ -138,6 +135,11 @@ public abstract class AbstractPage {
 	public List<WebElement> finds(WebDriver driver, String xpathElement) {
 		return driver.findElements(byXpath(xpathElement));
 	}
+	
+	//find with list Element
+	public List<WebElement> finds(WebDriver driver, String xpathElement, String value) {
+		return driver.findElements(byXpath(getDynamicLocator(xpathElement, value)));
+	}
 
 	// return by with xpath
 	public By byXpath(String xpathElement) {
@@ -146,6 +148,10 @@ public abstract class AbstractPage {
 
 	public void clickToElement(WebDriver driver, String xpathElement) {
 		find(driver, xpathElement).click();
+	}
+	
+	public void clickToElement(WebDriver driver, WebElement element) {
+		element.click();
 	}
 	
 	//return getDynamicLocator
@@ -394,5 +400,33 @@ public abstract class AbstractPage {
 		return PageGeneratorManager.getContactUs(driver);
 	}
 	
+	public void uploadMultipleFile(WebDriver driver, String...fileName) {
+		String filePath = System.getProperty("user.dir") + getDirectorySlash("uploadFile");
+		String fileUpload = "";
+		for(String file: fileName) {
+			fileUpload = fileUpload + filePath + file + "\n";
+		}
+		fileUpload = fileUpload.trim();
+//		waitForElementVisible(driver, AbstractPageUI.UPLOAD_FILE);
+		sendKeyToField(driver, AbstractPageUI.UPLOAD_FILE, fileUpload);
+		
+	}
+	
+	public String getDirectorySlash(String folderName) {
+		if(isOS()) {
+			folderName = "/"+ folderName + "/";
+		} else if(isWin()) {
+			folderName = "\\" + folderName + "\\";
+		}
+		return folderName;
+	}
+	
+	public boolean isOS() {
+		return (System.getProperty("os.name").toLowerCase().indexOf("mac") >= 0);
+	}
+	
+	public boolean isWin() {
+		return (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0);
+	}
 	
 }

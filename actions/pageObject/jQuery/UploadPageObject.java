@@ -17,8 +17,8 @@ public class UploadPageObject extends AbstractPage{
 		this.driver = driver;
 	}
 
-	public void clickOnAllUploadButton() {
-		List<WebElement>listButton = finds(driver, UploadPageUI.LIST_START_UPLOAD_BUTTON);
+	public void clickOnAllUploadButton(String buttonList) {
+		List<WebElement>listButton = finds(driver, UploadPageUI.LIST_DYNAMIC_BUTTON, buttonList);
 		for(WebElement button: listButton) {
 			clickToElement(driver, button);
 		}

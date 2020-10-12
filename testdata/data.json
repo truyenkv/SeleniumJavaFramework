@@ -1,0 +1,12 @@
+[{
+    "BI-01": {
+        "CardNumber": "999222000333",
+        "Owner": "KIEU VAN TRUYEN",
+        "CreateDate": "1011"
+    },
+    "BI-02": {
+        "CardNumber": "444422005555",
+        "Owner": "NGUYEN THI HOAI LINH",
+        "CreateDate": "2211"
+    }
+}]

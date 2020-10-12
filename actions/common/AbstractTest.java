@@ -73,5 +73,7 @@ public abstract class AbstractTest {
 	private void setDriver(WebDriver driver) {
 		threadLocal.set(driver);
 	}
+	
+
 }
  

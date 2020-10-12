@@ -6,7 +6,7 @@
   <test name="Run On Chrome">
   <parameter name = "browser" value = "chrome"/>
     <classes>
-      <class name="com.liveguru.users.Level_13_UploadFile"/>
+      <class name="com.jQuery.users.Level_13_UploadFile"/>
     </classes>
   </test> 
   

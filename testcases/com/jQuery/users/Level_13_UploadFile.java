@@ -32,9 +32,13 @@ public class Level_13_UploadFile extends AbstractTest{
 //		uploadPage.sleepInSecond(3);
 		uploadPage.uploadMultipleFile(driver, image1, image2, image3);
 		uploadPage.sleepInSecond(3);
-		uploadPage.clickOnAllUploadButton();
+		uploadPage.clickOnAllUploadButton("Start");
 		uploadPage.sleepInSecond(3);
 		Assert.assertTrue(uploadPage.isAllImageUploadSuccess(image1, image2, image3));
+		uploadPage.uploadMultipleFile(driver, image1, image2, image3);
+		uploadPage.sleepInSecond(3);
+		uploadPage.clickOnAllUploadButton("Cancel");
+		uploadPage.sleepInSecond(3);
 		;
 		
 	}
