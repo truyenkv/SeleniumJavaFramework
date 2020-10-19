@@ -2,6 +2,9 @@ package common;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -12,8 +15,11 @@ import org.testng.Reporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public abstract class AbstractTest {
-	// public static WebDriver driver;
-	// khai bao driver thread.local
+	protected final Log log;
+	
+	public AbstractTest() {
+		log = LogFactory.getLog(getClass());
+	}
 	protected static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>();
 
 	public WebDriver getWebDriver(String browserName) {

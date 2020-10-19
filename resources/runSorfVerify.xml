@@ -8,7 +8,7 @@
 	<listener class-name ="common.MethodListener" />
 </listeners>
   <test name="Run On Chrome">
-  <parameter name = "browser" value = "chrome"/>
+  <parameter name = "browser" value = "firefox"/>
     <classes>
       <class name="com.liveguru.users.Level_14_SortAssert"/>
     </classes>

@@ -444,7 +444,7 @@ public abstract class AbstractPage {
 			return false;
 	}
 
-	public boolean isControlUnDisplay(WebDriver driver, String xpathValue, String value) {
+	public boolean isControlUnDisplay(WebDriver driver, String xpathValue, String... value) {
 		overrideImplicitWait(driver, shortimeOut);
 		elements = finds(driver, getDynamicLocator(xpathValue, value));
 		overrideImplicitWait(driver, longTimeOut);
