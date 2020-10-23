@@ -43,17 +43,38 @@ public class Level_15_Run_With_Log extends AbstractTest{
 	
 	@Test(priority = 1)
 	public void TC_01_Register_Valid_Data() {
+		log.info("Step 01 - Check the MyAccount in the Footer");
 		verifyTrue(homePage.isFooterMyAccountDisplay());
 		
+		log.info("Step 02 - Check the MyAccount in the Header");
 		verifyTrue(homePage.isHeaderMyAccountUnDisplay());
 		
+		log.info("Step 03 - Check the Error Text Box Display");
 		verifyFalse(homePage.isErrorSubscribeTextBoxUnDisplay());
 		
+		log.info("Step 04 - Click the Subscribe button");
 		homePage.clickSubscribeTextBoxButton();
 		
+		log.info("Step 04 - Check the Error Text Box Display after click the Subcribece");
 		verifyTrue(homePage.isErrorSubscribeTextBoxDisplay());
 	}
 	
+	@Test(priority = 1)
+	public void TC_02_Register_Valid_Data() {
+		log.info("Step 01 - Check the MyAccount in the Footer");
+		verifyTrue(homePage.isFooterMyAccountDisplay());
+		
+		log.info("Step 02 - Check the MyAccount in the Header");
+		verifyTrue(homePage.isHeaderMyAccountUnDisplay());
+		
+		log.info("Step 03 - Check the Error Text Box Display");
+		verifyFalse(homePage.isErrorSubscribeTextBoxUnDisplay());
+		
+		log.info("Step 04 - Click the Subscribe button");
+		homePage.clickSubscribeTextBoxButton();
+		
+		
+	}
 	
 	@AfterClass
 	public void afterClass() {

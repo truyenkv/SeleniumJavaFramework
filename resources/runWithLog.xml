@@ -6,14 +6,28 @@
 
 <listeners>
 	<listener class-name ="common.MethodListener" />
+	
+	<!-- extend report v2 -->
+	<listener class-name ="reportConfig.ExtentReportListener"/>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 </listeners>
+ 
   <test name="Run On Chrome">
-  <parameter name = "browser" value = "firefox"/>
+  <parameter name = "browser" value = "chrome"/>
     <classes>
-      <class name="com.liveguru.users.Level_14_Run_With_Log"/>
+      <class name="com.liveguru.users.Level_15_Run_With_Log"/>
     </classes>
   </test> 
   
+  <test name="Run On FireFox">
+  <parameter name = "browser" value = "firefox"/>
+    <classes>
+      <class name="com.liveguru.users.Level_15_Run_With_Log"/>
+    </classes>
+  </test> 
+  
+
   
   
 </suite> <!-- Suite -->

@@ -34,7 +34,7 @@ public class HomePageObject extends AbstractPage {
 	
 
 	public boolean isErrorSubscribeTextBoxUnDisplay() {
-		return isControlUnDisplay(driver, HomePageUI.ERROR_SUBSCRIBE_MESSAGE);
+		return isElementDisplay(driver, HomePageUI.ERROR_SUBSCRIBE_MESSAGE);
 	}
 
 	public void clickSubscribeTextBoxButton() {
@@ -44,7 +44,7 @@ public class HomePageObject extends AbstractPage {
 	}
 
 	public boolean isErrorSubscribeTextBoxDisplay() {
-		return isControlUnDisplay(driver, HomePageUI.ERROR_SUBSCRIBE_MESSAGE);
+		return isElementDisplay(driver, HomePageUI.ERROR_SUBSCRIBE_MESSAGE);
 	}
 
 }
