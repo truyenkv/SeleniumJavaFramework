@@ -50,7 +50,7 @@ public class Level_11_Dynamic_Locator extends AbstractTest{
 	
 	@Test(priority = 1)
 	public void TC_01_Register_Valid_Data() {
-		email = registerPage.randomString() + "@vietnam.com";
+		email = randomString() + "@vietnam.com";
 		registerPage.inputTextToFirstNameField("Truyen");
 		registerPage.inputTextToLastField("Kieu");
 		registerPage.inputTextToEmailField(email);
@@ -92,11 +92,11 @@ public class Level_11_Dynamic_Locator extends AbstractTest{
 	
 	//@Test (priority = 4)
 	public void TC_04_Switch_Page_Dynamic() {
-		aboutUsPage = (AboutUsPageObject) contactUsPage.openFooterPageName(driver, "About Us");
+		aboutUsPage = (AboutUsPageObject) contactUsPage.openFooterPageNameAb(driver, "About Us");
 		
-		contactUsPage = (ContactUsPageObject) aboutUsPage.openFooterPageName(driver, "Contact Us");
+		contactUsPage = (ContactUsPageObject) aboutUsPage.openFooterPageNameAb(driver, "Contact Us");
 		
-		searchItemsPage = (SearchItemsPageObject) contactUsPage.openFooterPageName(driver, "Search Terms");
+		searchItemsPage = (SearchItemsPageObject) contactUsPage.openFooterPageNameAb(driver, "Search Terms");
 		
 		
 	}

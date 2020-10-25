@@ -1,12 +1,10 @@
 package pageObject.liveguru;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 
 import common.AbstractPage;
+import io.qameta.allure.Step;
 import pageUIs.liveguru.HomePageUI;
-import pageUIs.liveguru.RegisterPageUI;
 
 public class HomePageObject extends AbstractPage {
 	
@@ -16,6 +14,7 @@ public class HomePageObject extends AbstractPage {
 		this.driver = driver;
 	}
 
+	@Step("Click to My Account link and navigate to Login Page")
 	public UserLoginPageObject clickToMyAccountLink() {
 		waitForElementVisible(driver, HomePageUI.FOOTER_MY_ACCOUNT_BUTTON);
 		clickToElement(driver, HomePageUI.FOOTER_MY_ACCOUNT_BUTTON);

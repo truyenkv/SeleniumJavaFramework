@@ -4,10 +4,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Step;
 import pageObject.liveguru.AboutUsPageObject;
 import pageObject.liveguru.AdvanceSearchPageObject;
 import pageObject.liveguru.ContactUsPageObject;
@@ -33,6 +37,11 @@ public abstract class AbstractPage {
 	private short shortimeOut = 10;
 	private List<WebElement> elements;
 	private Actions action;
+	protected final Log log;
+	
+	protected AbstractPage() {
+		log = LogFactory.getLog(getClass());
+	}
 
 	public void openUrl(WebDriver driver, String url) {
 		driver.get(url);
@@ -91,8 +100,14 @@ public abstract class AbstractPage {
 	}
 
 	public void waitAlertPresence(WebDriver driver) {
-		explicitWait = new WebDriverWait(driver, shortimeOut);
-		explicitWait.until(ExpectedConditions.alertIsPresent());
+		try {
+			explicitWait = new WebDriverWait(driver, shortimeOut);
+			explicitWait.until(ExpectedConditions.alertIsPresent());
+		} 
+		catch(NoAlertPresentException e) {
+			log.debug(e.getMessage());
+		}
+		
 	}
 
 	public void switchWindowByID(WebDriver driver, String idswitch) {
@@ -349,7 +364,7 @@ public abstract class AbstractPage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(getDynamicLocator(xpathValue, value))));
 	}
 
-	public AbstractPage openFooterPageName(WebDriver driver, String pageName) {
+	public AbstractPage openFooterPageNameAb(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 		switch (pageName) {
@@ -364,6 +379,9 @@ public abstract class AbstractPage {
 
 		case "Contact Us":
 			return PageGeneratorManager.getContactUs(driver);
+			
+		case "My Account":
+			return PageGeneratorManager.getLoginPage(driver);
 
 		default:
 			return null;
@@ -375,24 +393,28 @@ public abstract class AbstractPage {
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 	}
 
+	@Step("Open the About Us Page")
 	public AboutUsPageObject openAboutUsPage(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.ABOUTUS_LINK);
 		clickToElement(driver, AbstractPageUI.ABOUTUS_LINK);
 		return PageGeneratorManager.getAboutUs(driver);
 	}
 
+	@Step("Open the Advance Search Page")
 	public AdvanceSearchPageObject openAdvanceSearchPage(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.ADVANCESEARCH_LINK);
 		clickToElement(driver, AbstractPageUI.ADVANCESEARCH_LINK);
 		return PageGeneratorManager.getAdvanceSearch(driver);
 	}
 
+	@Step("Open the Search Page")
 	public SearchItemsPageObject openSearchItemsPage(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.SEARCHITEMS_LINK);
 		clickToElement(driver, AbstractPageUI.SEARCHITEMS_LINK);
 		return PageGeneratorManager.getSeachItems(driver);
 	}
 
+	@Step("Open the Contact Page")
 	public ContactUsPageObject openContactUsPage(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.CONTACTUS_LINK);
 		clickToElement(driver, AbstractPageUI.CONTACTUS_LINK);
@@ -443,7 +465,8 @@ public abstract class AbstractPage {
 		} else
 			return false;
 	}
-
+	
+	
 	public boolean isControlUnDisplay(WebDriver driver, String xpathValue, String... value) {
 		overrideImplicitWait(driver, shortimeOut);
 		elements = finds(driver, getDynamicLocator(xpathValue, value));
@@ -454,6 +477,17 @@ public abstract class AbstractPage {
 			return true;
 		} else
 			return false;
+	}
+	
+	public void inputTextToFieldByID(WebDriver driver, String textID, String value) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_INPUT_LOCATOR, textID);
+		sendKeyToField(driver, value, AbstractPageUI.DYNAMIC_INPUT_LOCATOR, textID);
+	}
+	
+	public void clickOnButtonByTitle(WebDriver driver, String title) {
+		waitForElementClickable(driver, AbstractPageUI.DYNAMIC_BUTTON_LOCATOR, title);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_BUTTON_LOCATOR, title);
+		
 	}
 
 }

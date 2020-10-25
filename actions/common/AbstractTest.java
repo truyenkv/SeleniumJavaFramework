@@ -19,45 +19,53 @@ public abstract class AbstractTest {
 	public AbstractTest() {
 		log = LogFactory.getLog(getClass());
 	}
+	
 	protected static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>();
 
-	public WebDriver getWebDriver(String browserName) {
-		Browser browser = Browser.valueOf(browserName.toUpperCase());
-		if (browser == Browser.CHROME) {
-			WebDriverManager.chromedriver().setup();
-			setDriver(new ChromeDriver());
-			System.out.println("The driver is " + getDriver().toString());
+//	public WebDriver getWebDriver(String browserName) {
+//		Browser browser = Browser.valueOf(browserName.toUpperCase());
+//		if (browser == Browser.CHROME) {
+//			WebDriverManager.chromedriver().setup();
+//			setDriver(new ChromeDriver());
+//			System.out.println("Open: The driver is " + getDriver().toString());
+//		}
+//
+//		else if (browser == Browser.FIREFOX) {
+//			WebDriverManager.firefoxdriver().setup();
+//			setDriver(new FirefoxDriver());
+//		} else if (browser == Browser.EDGE) {
+//			WebDriverManager.edgedriver().setup();
+//			setDriver(new EdgeDriver());
+//
+//		}
+//		getDriver().manage().window().maximize();
+//		getDriver().get("http://live.demoguru99.com/");
+//		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		return getDriver();
+//	}
+	public String randomString() {
+		StringBuilder sb = new StringBuilder(4); 
+		String AlphaNumericString = "abcdefghijklmnopqrstuvxyz";
+		for(int i = 0; i < 4; i++) {
+			int index = (int)(AlphaNumericString.length() * Math.random()); 
+			sb.append(AlphaNumericString.charAt(index)); 
 		}
-
-		else if (browser == Browser.FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-			setDriver(new FirefoxDriver());
-		} else if (browser == Browser.EDGE) {
-			WebDriverManager.edgedriver().setup();
-			setDriver(new EdgeDriver());
-
-		}
-		getDriver().manage().window().maximize();
-		getDriver().get("http://live.demoguru99.com/");
-		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		return getDriver();
+		return sb.toString(); 
 	}
 
 	public WebDriver getWebDriver(String browserName, String appUrl) {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			// driver = new ChromeDriver();
 			setDriver(new ChromeDriver());
+			System.out.println("Open: The driver is " + getDriver().toString());
 		}
 
 		else if (browser == Browser.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			// driver = new FirefoxDriver();
 			setDriver(new FirefoxDriver());
 		} else if (browser == Browser.EDGE) {
 			WebDriverManager.edgedriver().setup();
-//			driver = new EdgeDriver();
 			setDriver(new EdgeDriver());
 		}
 		getDriver().manage().window().maximize();
@@ -72,13 +80,12 @@ public abstract class AbstractTest {
 			// get ra tên của OS và convert qua chữ thường
 			String osName = System.getProperty("os.name").toLowerCase();
 			log.info("OS name = " + osName);
-
+			System.out.println("Close: The driver is " + getDriver().toString());
 			// Khai báo 1 biến command line để thực thi
 			String cmd = "";
 			if (getDriver() != null) {
-				getDriver().quit();
+				getDriver().close();
 			}
-
 			if (getDriver().toString().toLowerCase().contains("chrome")) {
 				if (osName.toLowerCase().contains("mac")) {
 					cmd = "kill chromedriver";
@@ -96,17 +103,15 @@ public abstract class AbstractTest {
 					cmd = "taskkill /F /FI \"IMAGENAME eq geckodriver*\"";
 				}
 			}
-
 			Process process = Runtime.getRuntime().exec(cmd);
 			process.waitFor();
-
 		} catch (Exception e) {
 		}
 		threadLocal.remove();
 		
 	}
 
-	private WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return threadLocal.get();
 	}
 

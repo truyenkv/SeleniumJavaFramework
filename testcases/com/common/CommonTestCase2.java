@@ -28,7 +28,7 @@ public class CommonTestCase2 extends AbstractTest{
 		homePage = PageGeneratorManager.getHomePage(driver);
 		loginPage = homePage.clickToMyAccountLink();
 		registerPage = loginPage.clickToCreateAnAccountButton();
-		email = registerPage.randomString() + "@vietnam.com";
+		email = randomString() + "@vietnam.com";
 		registerPage.inputTextToFirstNameField("Truyen");
 		registerPage.inputTextToLastField("Kieu");
 		registerPage.inputTextToEmailField(email);

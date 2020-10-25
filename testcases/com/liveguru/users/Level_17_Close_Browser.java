@@ -158,8 +158,8 @@ public class Level_17_Close_Browser extends AbstractTest{
 	
 	@AfterClass (alwaysRun = true)
 	public void afterClass() {
-		driver.close();
-//		removeDriver();
+//		driver.close();
+		removeDriver();
 	}
 
 }

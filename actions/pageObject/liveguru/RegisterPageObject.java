@@ -16,7 +16,6 @@ public class RegisterPageObject extends AbstractPage {
 	public DashboardPageObject clickToRegisterButton() {
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
-		//return new DashboardPageObject(driver);
 		return PageGeneratorManager.getDashboard(driver);
 	}
 
@@ -82,15 +81,6 @@ public class RegisterPageObject extends AbstractPage {
 		return getElementText(driver, RegisterPageUI.MESSAGE_ERROR_PASSWORD_DIFF_CONFIRM_PASSWORD);
 	}
 	
-	public String randomString() {
-		StringBuilder sb = new StringBuilder(4); 
-		String AlphaNumericString = "abcdefghijklmnopqrstuvxyz";
-		for(int i = 0; i < 4; i++) {
-			int index = (int)(AlphaNumericString.length() * Math.random()); 
-			sb.append(AlphaNumericString.charAt(index)); 
-		}
-		return sb.toString(); 
-	}
 	
 	
 

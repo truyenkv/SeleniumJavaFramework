@@ -32,7 +32,7 @@ public class CommonTestCase extends AbstractTest{
 		homePage = PageGeneratorManager.getHomePage(driver);
 		loginPage = homePage.clickToMyAccountLink();
 		registerPage = loginPage.clickToCreateAnAccountButton();
-		email = registerPage.randomString() + "@vietnam.com";
+		email = randomString() + "@vietnam.com";
 		registerPage.inputTextToFirstNameField("Truyen");
 		registerPage.inputTextToLastField("Kieu");
 		registerPage.inputTextToEmailField(email);
@@ -42,7 +42,7 @@ public class CommonTestCase extends AbstractTest{
 		System.out.print(email);
 		Assert.assertEquals(dashBoardPage.getMessageofSuccessfulRegister(),"Thank you for registering with Main Website Store.");
 		homePage = dashBoardPage.clickOnLogoutLink();
-		driver.quit();
+		removeDriver();
 	}
 
 }

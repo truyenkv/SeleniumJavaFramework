@@ -45,7 +45,7 @@ public class Level_09_Page_Generator_Manager extends AbstractTest{
 	
 	@Test(priority = 1)
 	public void TC_01_Register_Valid_Data() {
-		email = registerPage.randomString() + "@vietnam.com";
+		email = randomString() + "@vietnam.com";
 		registerPage.inputTextToFirstNameField("Truyen");
 		registerPage.inputTextToLastField("Kieu");
 		registerPage.inputTextToEmailField(email);

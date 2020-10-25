@@ -40,4 +40,6 @@ public class PageGeneratorManager {
 	public static ManageCustomerPageObject getManageCustomerPage(WebDriver driver) {
 		return new ManageCustomerPageObject(driver);
 	}
+	
+	
 }
