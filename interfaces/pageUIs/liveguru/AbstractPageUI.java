@@ -10,4 +10,5 @@ public class AbstractPageUI {
 	public static final String DYNAMIC_INPUT_LOCATOR = "//input[@id='%s']";
 	public static final String DYNAMIC_BUTTON_LOCATOR = "//*[@class='button' and @title='%s']";
 	
+	
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite" parallel="true" thread-count="3">
 
-<parameter name = "appUrl" value = ""/>
+<parameter name = "appUrl" value = "https://www.saucedemo.com/inventory.html"/>
 
 <listeners>
 	<listener class-name ="common.MethodListener" />
@@ -16,10 +16,17 @@
   <test name="Run On Chrome">
   <parameter name = "browser" value = "chrome"/>
     <classes>
-    	<class name="com.liveguru.users.Level_15_Run_With_Log"/>
+    	<class name="com.liveguru.users.Level_21_Browser_Capacity"/>
     </classes>
   </test> 
+<!-- <test name="Run On Chrome Headless">
+  <parameter name = "browser" value = "chromeheadless"/>
+    <classes>
+    	<class name="com.liveguru.users.Level_21_Browser_Capacity"/>
+    </classes>
+  </test>  -->
   
+ 
  
   
 

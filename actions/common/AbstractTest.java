@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -55,7 +56,16 @@ public abstract class AbstractTest {
 
 	public WebDriver getWebDriver(String browserName, String appUrl) {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
-		if (browser == Browser.CHROME) {
+		
+		if (browser == Browser.CHROMEHEADLESS) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOption = new ChromeOptions();
+			chromeOption.addArguments("--headless");
+			chromeOption.addArguments("window-size=136x768");
+			setDriver(new ChromeDriver(chromeOption));
+			System.out.println("Open: The driver is " + getDriver().toString());
+		}
+		else if(browser == Browser.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			setDriver(new ChromeDriver());
 			System.out.println("Open: The driver is " + getDriver().toString());
@@ -105,13 +115,17 @@ public abstract class AbstractTest {
 			}
 			Process process = Runtime.getRuntime().exec(cmd);
 			process.waitFor();
+			
 		} catch (Exception e) {
 		}
 		threadLocal.remove();
 		
 	}
 
-	public static WebDriver getDriver() {
+	public static WebDriver getDrivers() {
+		return threadLocal.get();
+	}
+	public WebDriver getDriver() {
 		return threadLocal.get();
 	}
 

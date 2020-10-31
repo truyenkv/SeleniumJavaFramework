@@ -1,5 +1,7 @@
 package common;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -487,6 +489,103 @@ public abstract class AbstractPage {
 	public void clickOnButtonByTitle(WebDriver driver, String title) {
 		waitForElementClickable(driver, AbstractPageUI.DYNAMIC_BUTTON_LOCATOR, title);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_BUTTON_LOCATOR, title);
+		
+	}
+	
+	public boolean isDataSortedAscending(WebDriver driver, String locator) {
+		ArrayList<String>arrayList = new ArrayList<>();
+		List<WebElement> elementList = finds(driver, locator);
+		for(WebElement element : elementList) {
+			arrayList.add(element.getText());
+		}
+		System.out.println("-----Du Lieu Tren UI-----");
+		for(String name: arrayList) {
+			System.out.println(name);
+		}
+		
+		ArrayList<String>sortList = new ArrayList<>();
+		for(String a: arrayList) {
+			sortList.add(a);
+		}
+		
+		Collections.sort(arrayList);
+		System.out.println("-----Du Lieu Da Sort-----");
+		for(String name: arrayList) {
+			System.out.println(name);
+		}
+		return sortList.equals(arrayList);
+	}
+	
+	public boolean isDataSortedDescending(WebDriver driver, String locator) {
+		ArrayList<String>arrayList = new ArrayList<>();
+		List<WebElement> elementList = finds(driver, locator);
+		for(WebElement element : elementList) {
+			arrayList.add(element.getText());
+		}
+		System.out.println("-----Du Lieu Tren UI-----");
+		for(String name: arrayList) {
+			System.out.println(name);
+		}
+		
+		ArrayList<String>sortList = new ArrayList<>();
+		for(String a: arrayList) {
+			sortList.add(a);
+		}
+		
+		Collections.sort(arrayList);
+		Collections.reverse(arrayList);
+		System.out.println("-----Du Lieu Da Sort-----");
+		for(String name: arrayList) {
+			System.out.println(name);
+		}
+		return sortList.equals(arrayList);
+	}
+	
+	public boolean isPriceSortAscending(WebDriver driver, String locator) {
+		ArrayList<Float>arrayList = new ArrayList<>();
+		List<WebElement> elementList = finds(driver, locator);
+		for(WebElement element: elementList) {
+			arrayList.add(Float.parseFloat(element.getText().replace("$", "").trim()));
+		}
+		System.out.println("-----Du Lieu Tren UI-----");
+		for(Float name: arrayList) {
+			System.out.println(name);
+		}
+		ArrayList<Float>sortList = new ArrayList<>();
+		for(Float a: arrayList) {
+			sortList.add(a);
+		}
+		
+		Collections.sort(arrayList);
+		System.out.println("-----Du Lieu Da Sort-----");
+		for(Float name: arrayList) {
+			System.out.println(name);
+		}
+		return sortList.equals(arrayList);
+		
+	}
+	public boolean isPriceSortDescending(WebDriver driver, String locator) {
+		ArrayList<Float>arrayList = new ArrayList<>();
+		List<WebElement> elementList = finds(driver, locator);
+		for(WebElement element: elementList) {
+			arrayList.add(Float.parseFloat(element.getText().replace("$", "").trim()));
+		}
+		System.out.println("-----Du Lieu Tren UI-----");
+		for(Float name: arrayList) {
+			System.out.println(name);
+		}
+		ArrayList<Float>sortList = new ArrayList<>();
+		for(Float a: arrayList) {
+			sortList.add(a);
+		}
+		
+		Collections.sort(arrayList);
+		Collections.reverse(arrayList);
+		System.out.println("-----Du Lieu Da Sort-----");
+		for(Float name: arrayList) {
+			System.out.println(name);
+		}
+		return sortList.equals(arrayList);
 		
 	}
 

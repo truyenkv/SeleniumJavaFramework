@@ -36,7 +36,7 @@ public class AllureTestListener implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult iTestResult) {
-		WebDriver driver = AbstractTest.getDriver();
+		WebDriver driver = AbstractTest.getDrivers();
 		saveScreenshotPNG(iTestResult.getName(), driver);
 		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
 	}

@@ -40,19 +40,14 @@ public class Level_17_Close_Browser extends AbstractTest{
 		driver = getWebDriver(browserName, appUrl);
 		homePage = PageGeneratorManager.getHomePage(driver);
 		
-		log.info("TC - 01: Click to my account link");
 		loginPage = homePage.clickToMyAccountLink();
 		
-		log.info("TC - 02: Input email to Email Field");
 		loginPage.inputEmailToEmailField(CommonTestCase2.email);
 		
-		log.info("TC - 03: Input password to password field");
 		loginPage.inputPasswordToPasswordField(CommonTestCase2.password);
 		
-		log.info("TC - 04: Click on Login Button" );
 		dashBoardPage = loginPage.clickToLoginButton();
 		
-		log.info("TC - 05: Check the title login display");
 		Assert.assertFalse(dashBoardPage.isTitleLoginSuccessDisplay());
 		
 	}
