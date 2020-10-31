@@ -41,5 +41,9 @@ public class PageGeneratorManager {
 		return new ManageCustomerPageObject(driver);
 	}
 	
+	public static DataTablePageObject getDataTablePage(WebDriver driver) {
+		return new DataTablePageObject(driver);
+	}
+	
 	
 }

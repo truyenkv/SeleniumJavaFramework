@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.common.CommonTestCase;
+import com.common.CommonTestCase2;
 
 import common.AbstractTest;
 import pageObject.liveguru.AboutUsPageObject;
@@ -16,10 +16,10 @@ import pageObject.liveguru.AdvanceSearchPageObject;
 import pageObject.liveguru.ContactUsPageObject;
 import pageObject.liveguru.DashboardPageObject;
 import pageObject.liveguru.HomePageObject;
-import pageObject.liveguru.UserLoginPageObject;
 import pageObject.liveguru.PageGeneratorManager;
 import pageObject.liveguru.RegisterPageObject;
 import pageObject.liveguru.SearchItemsPageObject;
+import pageObject.liveguru.UserLoginPageObject;
 
 public class Level_17_Close_Browser extends AbstractTest{
 	WebDriver driver;
@@ -44,10 +44,10 @@ public class Level_17_Close_Browser extends AbstractTest{
 		loginPage = homePage.clickToMyAccountLink();
 		
 		log.info("TC - 02: Input email to Email Field");
-		loginPage.inputEmailToEmailField(CommonTestCase.email);
+		loginPage.inputEmailToEmailField(CommonTestCase2.email);
 		
 		log.info("TC - 03: Input password to password field");
-		loginPage.inputPasswordToPasswordField(CommonTestCase.password);
+		loginPage.inputPasswordToPasswordField(CommonTestCase2.password);
 		
 		log.info("TC - 04: Click on Login Button" );
 		dashBoardPage = loginPage.clickToLoginButton();
@@ -58,8 +58,8 @@ public class Level_17_Close_Browser extends AbstractTest{
 	}
 
 	
-	@Test (priority = 2)
-	public void TC_03_Switch_Page() {
+	@Test (priority = 1)
+	public void TC_01_Switch_Page() {
 		log.info("TC - 02: Open the About Page from Dashboard");
 		aboutUsPage = dashBoardPage.openAboutUsPage(driver);
 		
@@ -100,7 +100,7 @@ public class Level_17_Close_Browser extends AbstractTest{
 	}
 	
 
-	@Test (priority = 3)
+	@Test (priority = 2)
 	public void TC_02_Switch_Page() {
 		log.info("TC - 03: Click to my account link");
 		loginPage = homePage.clickToMyAccountLink();
@@ -158,7 +158,6 @@ public class Level_17_Close_Browser extends AbstractTest{
 	
 	@AfterClass (alwaysRun = true)
 	public void afterClass() {
-//		driver.close();
 		removeDriver();
 	}
 
