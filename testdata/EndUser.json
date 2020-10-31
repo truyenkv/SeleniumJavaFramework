@@ -1,0 +1,14 @@
+{
+	"Register" : {
+		"firstName" : "Linh",
+		"lastName" : "Hoai",
+		"email" : "hoailinh",
+		"password" : "111111"
+	},
+	
+	"Login" : {},
+	"firstName" : "Linh",
+	"lastName" : "Hoai",
+	"email" : "hoailinh",
+	"password" : "111111"
+}
